@@ -1,20 +1,31 @@
 provider "azurerm" {
-  subscription_id ="a8a59231-c575-45fb-8e16-2b4c5b6a2271"
-  tenant_id       = "513294a0-3e20-41b2-a970-6d30bf1546fa"
-  client_id       =  "ef2dde24-7a75-4716-9ccf-54f1e647d057"
-  client_secret   =  "r]LWDKGPqJ84.TfGmD/rC_nu0nn0y20n"
+  subscription_id = $AZURE_SUBSCRIPTION_ID
+  tenant_id       = $AZURE_TENANT_ID
+  client_id       =  $AZURE_CLIENT_ID
+  client_secret   =  $AZURE_CLIENT_SECRET 
   }
 
 
-resource "azurerm_resource_group" "test" {
-  name     = "snapshot-rg"
-  location = "West Europe"
+resource "azurerm_resource_group" "pwc-test" {
+
+ name     = "pwc-test"
+
+ location = "eastus"
+
 }
 
-resource "azurerm_snapshot" "test" {
-  name                = "snapshot"
-  location            = "${azurerm_resource_group.test.location}"
-  resource_group_name = "${azurerm_resource_group.test.name}"
+ 
+
+resource "azurerm_snapshot" "pwc-test" {
+
+  name                = "pwc-snapshot_name"
+
+  location            = "eastus"
+
+  resource_group_name = "pwc-test"
+
   create_option       = "Copy"
-  source_uri          = "${azurerm_managed_disk.test.id}"
+
+  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/PWC-TEST/providers/Microsoft.Compute/disks/test_OsDisk_1_c682ef01a39f4f4089ce77e4ebc85fc5"
+
 }
