@@ -4,8 +4,9 @@ provider "azurerm" {
   //client_id       =  $AZURE_CLIENT_ID
   //client_secret   =  $AZURE_CLIENT_SECRET 
   version = "=1.34.0"
+  
   }
-echo "hi shanmukha $AZURE_SUBSCRIPTION_ID"
+
 
 resource "azurerm_resource_group" "pwc-test" {
 
