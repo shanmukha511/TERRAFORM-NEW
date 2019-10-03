@@ -10,6 +10,13 @@ pipeline{
                 //url: 'https://github.com/shanmukha511/Terraform.git'
  checkout scm
             
+            withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal,
+subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID',
+clientIdVariable: 'AZURE_CLIENT_ID',
+clientSecretVariable: 'AZURE_CLIENT_SECRET',
+tenantIdVariable: 'AZURE_TENANT_ID')])
+            
+            
             //withCredentials([azureServicePrincipal('AzureServicePrinicpal')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
               // echo "$AZURE_SUBSCRIPTION_ID"  
