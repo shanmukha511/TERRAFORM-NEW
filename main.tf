@@ -1,8 +1,8 @@
 provider "azurerm" {
-  subscription_id = $AZURE_SUBSCRIPTION_ID
-  tenant_id       = $AZURE_TENANT_ID
-  client_id       =  $AZURE_CLIENT_ID
-  client_secret   =  $AZURE_CLIENT_SECRET 
+  subscription_id ="a8a59231-c575-45fb-8e16-2b4c5b6a2271"
+  tenant_id       = "513294a0-3e20-41b2-a970-6d30bf1546fa"
+  client_id       =  "ef2dde24-7a75-4716-9ccf-54f1e647d057"
+  client_secret   =  "r]LWDKGPqJ84.TfGmD/rC_nu0nn0y20n"
   }
 
 
