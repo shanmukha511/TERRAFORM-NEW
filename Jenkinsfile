@@ -20,7 +20,7 @@ pipeline{
             
             //echo "$AZURE_SUBSCRIPTION_ID"
             //echo  "$AZURE_TENANT_ID"
-            sh "terraform plan -out=tfplan -input=false"
+            sh "terraform plan -input=false"
                      
 //}
         }
