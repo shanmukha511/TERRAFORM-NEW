@@ -17,7 +17,7 @@ pipeline{
 //tenantIdVariable: 'AZURE_TENANT_ID')])
             
             
-            withCredentials([azureServicePrincipal('AzureServicePrincipal')]) {
+           .. withCredentials([azureServicePrincipal('AzureServicePrincipal')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
               echo "$AZURE_SUBSCRIPTION_ID"  
                
@@ -34,7 +34,7 @@ pipeline{
             sh "terraform plan"
             
            // sh "az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID" sh "az account set -s $SUBS_ID" sh "terraform init"
-}
+//}
         }
     }
 }
