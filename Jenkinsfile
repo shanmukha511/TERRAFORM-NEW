@@ -16,7 +16,7 @@ pipeline{
                
               // echo "My secret is  $AZURE_CLIENT_ID"
               sh "terraform init -input=false"
-                sh "terraform plan "
+                //sh "terraform plan "
                      
 //}
         }
