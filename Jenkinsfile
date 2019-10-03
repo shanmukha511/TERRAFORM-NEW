@@ -13,8 +13,8 @@ pipeline{
               // echo "$AZURE_SUBSCRIPTION_ID"  
                
               // echo "My secret is  $AZURE_CLIENT_ID"
-              //sh "terraform init"
-               //  sh "terraform plan"
+              sh "terraform init"
+                sh "terraform plan"
                      
 }
         }
