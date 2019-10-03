@@ -18,8 +18,8 @@ pipeline{
               //sh "terraform init -input=false"
                 //sh "terraform plan "
             
-            echo "${params.AZURE_SUBSCRIPTION_ID}"
-            echo  "${params.AZURE_TENANT_ID} "
+            echo "$AZURE_SUBSCRIPTION_ID"
+            echo  "$AZURE_TENANT_ID"
                      
 //}
         }
