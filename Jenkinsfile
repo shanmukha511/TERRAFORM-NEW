@@ -10,7 +10,7 @@ pipeline{
                 //url: 'https://github.com/shanmukha511/Terraform.git'
  checkout scm
             
-            withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal,
+            withCredentials([azureServicePrincipal(credentialsId: 'AzureServicePrincipal',
 subscriptionIdVariable: 'AZURE_SUBSCRIPTION_ID',
 clientIdVariable: 'AZURE_CLIENT_ID',
 clientSecretVariable: 'AZURE_CLIENT_SECRET',
