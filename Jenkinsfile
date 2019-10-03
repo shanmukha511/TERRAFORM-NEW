@@ -17,6 +17,9 @@ pipeline{
               // echo "My secret is  $AZURE_CLIENT_ID"
               //sh "terraform init -input=false"
                 //sh "terraform plan "
+            
+            echo ${params.AZURE_SUBSCRIPTION_ID}
+            echo  ${params.AZURE_TENANT_ID} 
                      
 //}
         }
