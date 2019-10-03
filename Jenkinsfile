@@ -1,6 +1,6 @@
 pipeline{
     agent any
-      properties([ parameters([
+      options([ parameters([
   string( name: 'AZURE_SUBSCRIPTION_ID', defaultValue: ''),
   string( name: 'AZURE_CLIENT_ID', defaultValue: ''),
   string( name: 'AZURE_CLIENT_SECRET', defaultValue: ''),
