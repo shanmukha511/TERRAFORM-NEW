@@ -2,7 +2,9 @@
 
 pipeline{
     agent any
-
+ withCredentials([azureServicePrincipal('AzureServicePrincipal')]) {
+            sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+              echo "$hi shanmukhaAZURE_SUBSCRIPTION_ID"  
 stages
     {
     stage('Git Checkout')
@@ -15,6 +17,7 @@ stages
      stage('terraform init') {
             steps {
                  sh "terraform init -input=false"
+               
             }
         }
         
