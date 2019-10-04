@@ -2,10 +2,11 @@
 
 pipeline{
     agent any
-     withCredentials([azureServicePrincipal('AzureServicePrincipal')])
+     
  
 stages
     {
+        withCredentials([azureServicePrincipal('AzureServicePrincipal')])
     stage('Git Checkout')
     {
          steps
