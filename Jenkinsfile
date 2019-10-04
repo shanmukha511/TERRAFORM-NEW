@@ -30,9 +30,11 @@ stages
         }
         stage('terraform apply') {
            steps {
+               withCredentials([azureServicePrincipal('AzureServicePrincipal')]) {
                echo "hi shanmukha $AZURE_SUBSCRIPTION_ID" 
              sh "terraform apply -input=false -auto-approve  -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET}"
             }
+           }
         }
     
 }
