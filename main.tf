@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "pwc-test" {
 
 resource "azurerm_snapshot" "pwc-test" {
 
-  name                = "pwc-snapshot_name1"
+  name                = "pwc-snapshot_name2"
 
   location            = "eastus"
 
