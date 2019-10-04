@@ -6,7 +6,7 @@ pipeline{
  
 stages
     {
-        withCredentials([azureServicePrincipal('AzureServicePrincipal')])
+      
     stage('Git Checkout')
     {
          steps
@@ -23,18 +23,17 @@ stages
         
          stage('terraform plan') {
             steps {
-               
+               withCredentials([azureServicePrincipal('AzureServicePrincipal')])
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
               echo "hi shanmukha $AZURE_SUBSCRIPTION_ID" 
-               sh "terraform plan  -input=false -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET}"
-            
+               sh "terraform plan  -input=false "            
             }
         }
         stage('terraform apply') {
            steps {
-               
+               withCredentials([azureServicePrincipal('AzureServicePrincipal')])
                echo "hi shanmukha $AZURE_SUBSCRIPTION_ID" 
-             sh "terraform apply -input=false -auto-approve  -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET}"
+             sh "terraform apply -input=false -auto-approve  "
             
            }
         }
