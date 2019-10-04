@@ -42,7 +42,7 @@ sh 'export AZURE_TENANT_ID=$AZURE_TENANT_ID'
             //sh "terraform plan -var subscription_id={params.AZURE_SUBSCRIPTION_ID} -var tenant_id={params.AZURE_TENANT_ID} -var client_id={params.AZURE_CLIENT_ID} -var client_secret={params.AZURE_CLIENT_SECRET}"
            
      sh "terraform plan  -input=false -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET}"
-     sh "terraform apply -input=false -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET} "       
+     sh "terraform apply -input=false -auto-approve -var subscription_id=${AZURE_SUBSCRIPTION_ID} -var tenant_id=${AZURE_TENANT_ID} -var client_id=${AZURE_CLIENT_ID} -var  client_secret=${AZURE_CLIENT_SECRET} "       
            // sh "az login --service-principal -u $CLIENT_ID -p $CLIENT_SECRET -t $TENANT_ID" sh "az account set -s $SUBS_ID" sh "terraform init"
 //}
         }
