@@ -29,14 +29,14 @@ stages
                sh "terraform plan  -input=false "            
             }
         }
-        stage('terraform apply') {
-           steps {
-               withCredentials([azureServicePrincipal('AzureServicePrincipal')])
-               echo "hi shanmukha $AZURE_SUBSCRIPTION_ID" 
-             sh "terraform apply -input=false -auto-approve  "
+        //stage('terraform apply') {
+          // steps {
+            //   withCredentials([azureServicePrincipal('AzureServicePrincipal')])
+              // echo "hi shanmukha $AZURE_SUBSCRIPTION_ID" 
+             //sh "terraform apply -input=false -auto-approve  "
             
-           }
-        }
+          // }
+        //}
     
 }
 }
