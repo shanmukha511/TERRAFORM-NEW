@@ -2,19 +2,6 @@
 
 pipeline{
     agent any
-      properties([ parameters([
-  string( name: 'AZURE_SUBSCRIPTION_ID', defaultValue: ''),
-  string( name: 'AZURE_CLIENT_ID', defaultValue: ''),
-  string( name: 'AZURE_CLIENT_SECRET', defaultValue: ''),
-          string( name: 'AZURE_TENANT_ID', defaultValue: '')
-]), pipelineTriggers([]) ])
-    
-    
-    env.AZURE_SUBSCRIPTION_ID = AZURE_SUBSCRIPTION_ID
-env.AZURE_CLIENT_ID = AZURE_CLIENT_ID
-    env.AZURE_CLIENT_SECRET = AZURE_CLIENT_SECRET
-env.AZURE_TENANT_ID = AZURE_TENANT_ID
-echo "Setting environment variables for Terraform"
 
 
     
