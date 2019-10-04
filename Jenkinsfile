@@ -14,6 +14,8 @@ pipeline{
 env.AZURE_CLIENT_ID = AZURE_CLIENT_ID
     env.AZURE_CLIENT_SECRET = AZURE_CLIENT_SECRET
 env.AZURE_TENANT_ID = AZURE_TENANT_ID
+echo "Setting environment variables for Terraform"
+
 
     
     stages
@@ -36,6 +38,11 @@ env.AZURE_TENANT_ID = AZURE_TENANT_ID
            //withCredentials([azureServicePrincipal('AzureServicePrincipal')]) {
             sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
               echo "$AZURE_SUBSCRIPTION_ID"  
+            
+           sh 'export AZURE_SUBSCRIPTION_ID=$AZURE_SUBSCRIPTION_ID'
+sh 'export AZURE_CLIENT_ID=$AZURE_CLIENT_ID'
+sh 'export AZURE_CLIENT_SECRET=$AZURE_CLIENT_SECRET'
+sh 'export AZURE_TENANT_ID=$AZURE_TENANT_ID'
                
               echo "My secret is  $AZURE_CLIENT_ID"
               sh "terraform init -input=false"
