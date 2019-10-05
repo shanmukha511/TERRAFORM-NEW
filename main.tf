@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "pwc-test" {
 
 resource "azurerm_snapshot" "pwc-test" {
 
-  name                = "pwc-snapshot_name3"
+  name                = "pwc-snapshot_ubuntu"
 
   location            = "eastus"
 
@@ -28,7 +28,7 @@ resource "azurerm_snapshot" "pwc-test" {
 
   create_option       = "Copy"
 
-  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/PWC-TEST/providers/Microsoft.Compute/disks/NewVM_OsDisk_1_0a07d1f851544c9e8b5490cf6342291d"
+  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/PWC-TEST/providers/Microsoft.Compute/disks/Ubuntu_OsDisk_1_e4a33f1d59074d058475a92410f46688"
 
 }
 
