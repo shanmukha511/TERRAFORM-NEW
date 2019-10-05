@@ -28,7 +28,7 @@ resource "azurerm_snapshot" "pwc-test" {
 
   create_option       = "Copy"
 
-  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/PWC-TEST/providers/Microsoft.Compute/disks/Ubuntu_OsDisk_1_e4a33f1d59074d058475a92410f46688"
+  source_uri          = "/subscriptions/a8a59231-c575-45fb-8e16-2b4c5b6a2271/resourceGroups/PWC-TEST/providers/Microsoft.Compute/disks/UbuntuVM_OsDisk_1_6b6cc17743214128ab11a23f92ed3b9e"
 
 }
 
