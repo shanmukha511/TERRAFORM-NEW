@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "pwc-test" {
 
 resource "azurerm_snapshot" "pwc-test" {
 
-  name                = "pwc-snapshot_Ubuntu"
+  name                = "pwc-snapshot_Windows"
 
   location            = "eastus"
 
